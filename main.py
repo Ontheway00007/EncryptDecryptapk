@@ -5,6 +5,7 @@ from kivymd.uix.floatlayout import MDFloatLayout
 from kivymd.uix.tab import MDTabsBase
 KV = '''
 #:import Clipboard kivy.core.clipboard.Clipboard
+#:import Snackbar kivymd.uix.snackbar.Snackbar
 MDBoxLayout:
     orientation: "vertical"
 
@@ -39,7 +40,8 @@ MDBoxLayout:
         theme_icon_color: "Custom"
         icon_color: "grey"
         pos_hint: {'center_x':0.94, 'center_y':0.630}
-
+        on_press: Snackbar(text="copied!").open()
+        	
         on_release:
             Clipboard.copy(genkey.text)
         
@@ -85,7 +87,7 @@ MDBoxLayout:
 		theme_icon_color: "Custom"
         icon_color: "grey"
         pos_hint: {'center_x':0.95, 'center_y':0.830}
-
+		on_press: Snackbar(text="copied!").open()
         on_release:
             Clipboard.copy(inputkey.text)
     
@@ -135,7 +137,7 @@ MDBoxLayout:
         theme_icon_color: "Custom"
         icon_color: "grey"
         pos_hint: {'center_x':0.88, 'center_y':0.430}
-
+		on_press: Snackbar(text="copied!").open()
         on_release:
             Clipboard.copy(encryptedmessage.text)
     MDIcon:
@@ -217,7 +219,7 @@ MDBoxLayout:
         theme_icon_color: "Custom"
         icon_color: "grey"
         pos_hint: {'center_x':0.90, 'center_y':0.430}
-
+		on_press: Snackbar(text="copied!").open()
         on_release:
             Clipboard.copy(orginalmessage.text)
     MDIcon:
